@@ -1,6 +1,6 @@
 > 🌐 This README is also available in Spanish: [README.md](README.md).
 
-![ilyOS Banner](images/bannerREADME/bannerTest2.png)
+![ilyOS Banner](assets/readmeAssets/topBanner.png)
 
 ---
 
