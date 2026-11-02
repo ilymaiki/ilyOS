@@ -7,5 +7,8 @@ actions:
 - !writeStatus: {status: 'Removiendo las APPX'}
 - !task: {path: 'Tasks/appx.yml'}
 
+- !writeStatus: {status: 'Aplicando el fondo de pantalla'}
+- !task: {path: 'Tasks/wallpaper.yml'}
+
 - !writeStatus: {status: 'Configurando el Explorador de Archivos'}
 - !task: {path: 'Tasks/explorer.yml'}

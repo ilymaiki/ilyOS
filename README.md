@@ -1,52 +1,52 @@
-> 🌐 Este README también está disponible en inglés: [READMEeng.MD](READMEeng.MD).
+> 🌐 This README is also available in Spanish: [READMEesp.md](READMEesp.md).
 
-![ilyOS Banner](images/bannerREADME/bannerTest2.png)
-
----
-
-## 📖 ¿Qué es ilyOS?
-
-ilyOS es la configuración que uso a diario, empaquetada en un playbook de AME Wizard y lista para aplicar. Este *OS* busca tanto velocidad **como** ligereza, sin dejar de tener en cuenta el minimalismo y la comodidad del uso. La idea es simple: cada cambio del playbook viene de cómo yo trabajo con el sistema a diario, es decir, decisiones basadas en el uso real, no en la lista de cosas que *podrían desactivarse* por el mero hecho de hacerlo.
-
-## 💭 Filosofía
-
-ilyOS sigue la simple filosofía de tener un equipo configurado y basado en las interfaces y formas de trabajar que he desarrollado a lo largo de los años usando Windows. Al igual que Omarchy (configuración de Arch Linux), este playbook busca generar un entorno a mi gusto (y espero que el vuestro): configuraciones de aplicaciones, barra de tareas, interfaz y demás apartados que he ido modificando, corrigiendo y ajustando.
-
-**Lo que NO es:**
-
-- No busca ser competencia de nadie.
-- No intenta ser el mejor playbook del mercado.
-- Si te gustan sistemas como [AtlasOS](https://atlasos.org) o [ReviOS](https://revi.cc), siéntete libre de usarlos sin problemas, porque son proyectazos más dedicados que los míos.
-
-**Lo que SÍ es:**
-
-- La idea de este playbook es terminar el proyecto que empecé con 16 años y que retomé con 20, pero dándole el enfoque de usar playbooks, a diferencia de las versiones antiguas de ilyOS, que modificaban la ISO de Windows 10/11 directamente.
-- Si 5 personas usan este sistema y les mola, me doy por satisfecho; si lo usan mis amigos, me doy por satisfecho; y si lo uso yo, me doy por satisfecho, porque así no tengo que configurar mi equipo en cada formateo anual.
+![ilyOS Banner](assets/readmeAssets/topBanner.png)
 
 ---
 
-## 🔧 Requisitos
+## 📖 What is ilyOS?
 
-- Versión más reciente de **Windows 11**. Se recomienda que el sistema esté completamente formateado para la instalación.
-- **Playbook oficial de ilyOS**. Por favor, nunca descargues una versión fuera de mis enlaces de descarga.
-- [AME Wizard](https://ameliorated.io), es la aplicación que ejecuta el playbook.
+ilyOS is the setup I use every day, packaged as an AME Wizard playbook and ready to apply. This *OS* aims for both speed **and** lightness, without losing sight of minimalism and comfortable everyday use. The idea is simple: every change in the playbook comes from how I work with the system day to day, that is, decisions based on real usage — not on disabling things just because they *might be disabled*.
 
-## ⬇️ Instalación
+## 💭 Philosophy
 
-1. Descarga la *release* más reciente del playbook (`ilyOSvX.X.X.apbx`).
-2. Descarga y abre [AME Wizard](https://ameliorated.io).
-3. Arrastra el playbook a la ventana, ejecuta, sigue las instrucciones de instalación y listo.
+ilyOS follows a simple philosophy: having a machine set up around the interfaces and ways of working I've developed over the years using Windows. Much like Omarchy (an Arch Linux configuration), this playbook aims to build an environment to my taste (and hopefully yours): app configurations, taskbar, interface and everything else I've been modifying, fixing and adjusting.
+
+**What it is NOT:**
+
+- It is not trying to compete with anyone.
+- It does not aim to be the best playbook on the market.
+- If you like systems such as [AtlasOS](https://atlasos.org) or [ReviOS](https://revi.cc), feel free to use them without a second thought, because they are bigger, more dedicated projects than mine.
+
+**What it IS:**
+
+- The goal of this playbook is to finish the project I started when I was 16 and picked back up at 20, this time built around playbooks, unlike the old versions of ilyOS that modified the Windows 10/11 ISO directly.
+- If 5 people use this system and enjoy it, I'm satisfied; if my friends use it, I'm satisfied; and if I use it, I'm satisfied, because that way I don't have to set up my machine from scratch every year thanks to my annual reinstall ritual.
 
 ---
 
-## ⚖️ Licencia
+## 🔧 Requirements
 
-ilyOS es un proyecto *open source*, con licencia [MIT](LICENSE).
+- The most recent version of **Windows 11**. It is recommended that the system be completely formatted (clean install) before applying the playbook.
+- The **official ilyOS playbook**. Please, never download a version from anywhere other than my download links.
+- [AME Wizard](https://ameliorated.io), the application that runs the playbook.
 
-- **Puedes** ver, copiar, modificar y usar el código (y los *wallpapers* e imágenes) libremente, incluso en proyectos privados o personales.
-- Si lanzas al público algo basado en ilyOS (otro playbook, una variación, un fork...), **debes darme créditos**: menciona a **Daniel (@ilymaiki)**, enlaza al repositorio original y no uses mi nombre ni el nombre "ilyOS" para dar a entender que yo respaldo tu variación.
-- Todo el contenido del playbook, incluidos los *wallpapers* e imágenes, es obra propia creada desde cero, y está sujeto a los mismos términos.
+## ⬇️ Installation
 
-Si vas a basar tu proyecto en ilyOS, ¡me encantaría verlo!. Publica el código de tu variación y, cuando lo lances, avísame — me hace ilusión ver en qué lo convertís por que fijo que sois más expertos que yo, solo soy un colgado que estudia 2DAW y le mola personalizar Windows.
+1. Download the latest *release* of the playbook (`ilyOSvX.X.X.apbx`).
+2. Download and open [AME Wizard](https://ameliorated.io).
+3. Drag the playbook into the window, run it, follow the installation instructions and you're done.
+
+---
+
+## ⚖️ License
+
+ilyOS is an *open source* project, licensed under [MIT](LICENSE).
+
+- You **may** view, copy, modify and use the code (and the *wallpapers* and images) freely, even in private or personal projects.
+- If you publicly release something based on ilyOS (another playbook, a variation, a fork...), **you must credit me**: mention **Daniel (@ilymaiki)**, link to the original repository and do not use my name or the name "ilyOS" in a way that implies I endorse your variation.
+- All the content of the playbook, including the *wallpapers* and images, is my own work created from scratch, and is subject to the same terms.
+
+If you're going to build something on top of ilyOS, I'd love to see it! Publish the code of your variation and, when you launch it, let me know — it makes me happy to see what you turn it into, because I'm sure you're way better at this than I am. I'm just a guy studying software development (2DAW) who loves customizing Windows.
 
 ---

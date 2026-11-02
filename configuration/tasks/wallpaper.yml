@@ -1,0 +1,95 @@
+title: Wallpaper
+
+actions:
+  - !powerShell:
+    command: |
+      New-Item -ItemType Directory -Force -Path 'C:\Windows\Web\Wallpaper\ilyOS' | Out-Null
+      Copy-Item '.\applyWallpaper\ilyOsBlack.jpg' 'C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg' -Force
+      Copy-Item '.\applyWallpaper\ilyOsWhite.jpg' 'C:\Windows\Web\Wallpaper\ilyOS\ilyOsWhite.jpg' -Force
+      Copy-Item '.\applyWallpaper\applyWallpaper.ps1' 'C:\Windows\Web\Wallpaper\ilyOS\applyWallpaper.ps1' -Force
+    exeDir: true
+    wait: true
+
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager',
+      value: 'SubscribedContent-338387Enabled',
+      type: REG_DWORD, data: '0'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\DesktopSpotlight\Settings',
+      value: 'EnabledState',
+      type: REG_DWORD, data: '0'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Policies\Microsoft\Windows\CloudContent',
+      value: 'DisableSpotlightCollectionOnDesktop',
+      type: REG_DWORD, data: '1'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Control Panel\Desktop',
+      value: 'Wallpaper',
+      type: REG_SZ,
+      data: 'C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg'
+  }
+  - !registryValue: {
+      path: 'HKCU\Control Panel\Desktop',
+      value: 'WallpaperStyle',
+      type: REG_SZ, data: '10'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers',
+      value: 'BackgroundType',
+      type: REG_DWORD, data: '0'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers',
+      value: 'CurrentWallpaperPath',
+      type: REG_SZ, data: 'C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg'
+  }
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers',
+      value: 'BackgroundHistoryPath0',
+      type: REG_SZ, data: 'C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg'
+  }
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers',
+      value: 'BackgroundHistoryPath1',
+      type: REG_SZ, data: 'C:\Windows\Web\Wallpaper\ilyOS\ilyOsWhite.jpg'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Control Panel\Desktop',
+      value: 'JPEGImportQuality',
+      type: REG_DWORD, data: '100'
+  }
+
+  - !powerShell:
+    command: '.\applyWallpaper\applyWallpaper.ps1 -ImagePath ''C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg'''
+    exeDir: true
+    wait: true
+    runas: currentUserElevated
+
+  - !registryValue: {
+      path: 'HKLM\Software\Microsoft\Windows\CurrentVersion\RunOnce',
+      value: 'ilyOSWallpaperStartup',
+      type: REG_SZ,
+      oobe: only,
+      data: 'cmd /c "powershell -NoP -ExecutionPolicy Bypass -File C:\Windows\Web\Wallpaper\ilyOS\applyWallpaper.ps1 -ImagePath C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg"'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize',
+      value: 'AppsUseLightTheme',
+      type: REG_DWORD, data: '0'
+  }
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize',
+      value: 'SystemUsesLightTheme',
+      type: REG_DWORD, data: '0'
+  }

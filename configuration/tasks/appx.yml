@@ -2,12 +2,12 @@ title: APPX Removal
 
 actions:
 
-  # Desinstalar apps preinstaladas de la familia - Uninstall preinstalled family apps
+  #  Uninstall preinstalled family apps - Desinstalar apps preinstaladas de la familia
   - !appx: {name: '*disney*', type: family}
   - !appx: {name: '*PowerAutomate*', type: family}
   - !appx: {name: '*MicrosoftTeams*', type: family}
 
-  # Vaciar la caché de componentes del sistema - Clear system component caches
+  # Clear system component caches - Vaciar la caché de componentes del sistema
   - !appx: {name: '*Client.CBS*', operation: clearCache}
   - !appx: {name: '*StartMenuExperienceHost*', operation: clearCache}
   - !appx: {name: '*Windows.Search*', operation: clearCache}
