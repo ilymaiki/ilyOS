@@ -1,6 +1,6 @@
 > 🌐 Este README también está disponible en inglés: [READMEeng.MD](READMEeng.MD).
 
-![ilyOS Banner](images/bannerREADME/bannerTest2.png)
+![ilyOS Banner](assets/readmeAssets/topBanner.png)
 
 ---
 
