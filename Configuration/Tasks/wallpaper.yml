@@ -10,7 +10,6 @@ actions:
     exeDir: true
     wait: true
 
-
   - !registryValue: {
       path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager',
       value: 'SubscribedContent-338387Enabled',
@@ -81,15 +80,4 @@ actions:
       type: REG_SZ,
       oobe: only,
       data: 'cmd /c "powershell -NoP -ExecutionPolicy Bypass -File C:\Windows\Web\Wallpaper\ilyOS\applyWallpaper.ps1 -ImagePath C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg"'
-  }
-
-  - !registryValue: {
-      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize',
-      value: 'AppsUseLightTheme',
-      type: REG_DWORD, data: '0'
-  }
-  - !registryValue: {
-      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize',
-      value: 'SystemUsesLightTheme',
-      type: REG_DWORD, data: '0'
   }

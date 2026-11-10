@@ -1,22 +1,18 @@
-# IDE
-.idea/
-.vscode/
 *.iml
-
-# Playbooks
 *.apbx
 *.zip
-
-# Binaries.
-AME*.exe
 *.exe
-
-# System
-Thumbs.db
-Desktop.ini
-.DS_Store
 *.log
 
-# Develop
-.opencode/
+Thumbs.db
+Desktop.ini
+AME*.exe
+.DS_Store
+AGENTS.md
+
 docs/
+test/
+.vscode/
+.opencode/
+
+!Executables/Browser/7zr.exe

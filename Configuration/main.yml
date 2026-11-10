@@ -1,0 +1,23 @@
+title: Main
+
+actions:
+- !writeStatus: {status: 'Modificando el registro'}
+- !task: {path: 'Tasks/registry.yml'}
+
+- !writeStatus: {status: 'Configurando el DNS'}
+- !task: {path: 'Tasks/dns.yml'}
+
+- !writeStatus: {status: 'Aplicando el fondo de pantalla'}
+- !task: {path: 'Tasks/wallpaper.yml'}
+
+- !writeStatus: {status: 'Configurando la personalización'}
+- !task: {path: 'Tasks/personalization.yml'}
+
+- !writeStatus: {status: 'Configurando las animaciones'}
+- !task: {path: 'Tasks/animations.yml'}
+
+- !writeStatus: {status: 'Instalando el navegador'}
+- !task: {path: 'Tasks/browsers.yml'}
+
+- !writeStatus: {status: 'Configurando el Explorador de Archivos'}
+- !task: {path: 'Tasks/explorer.yml'}

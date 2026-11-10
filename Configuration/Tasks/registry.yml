@@ -1,0 +1,5 @@
+title: Registry Edits
+
+actions:
+  - !registryValue: {path: 'HKLM\SOFTWARE\Microsoft\Windows\Windows Error Reporting', value: 'Disabled', type:  REG_DWORD, data: '1'}
+
