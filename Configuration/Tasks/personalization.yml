@@ -1,0 +1,73 @@
+title: Personalization - Personalizacion
+
+actions:
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize',
+      value: 'AppsUseLightTheme',
+      type: REG_DWORD, data: '0'
+  }
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize',
+      value: 'SystemUsesLightTheme',
+      type: REG_DWORD, data: '0'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize',
+      value: 'EnableTransparency',
+      type: REG_DWORD, data: '0'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize',
+      value: 'ColorPrevalence',
+      type: REG_DWORD, data: '0'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\DWM',
+      value: 'ColorPrevalence',
+      type: REG_DWORD, data: '0'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced',
+      value: 'Start_AccountNotifications',
+      type: REG_DWORD, data: '0'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced',
+      value: 'Start_TrackProgs',
+      type: REG_DWORD, data: '0'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced',
+      value: 'Start_IrisRecommendations',
+      type: REG_DWORD, data: '0'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Search',
+      value: 'SearchboxTaskbarMode',
+      type: REG_DWORD, data: '0'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced',
+      value: 'ShowTaskViewButton',
+      type: REG_DWORD, data: '0'
+  }
+
+  - !powerShell:
+    command: |
+      reg add 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced' /v TaskbarDa /t REG_DWORD /d 0 /f
+    wait: true
+    runas: currentUser
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced',
+      value: 'TaskbarAl',
+      type: REG_DWORD, data: '0'
+  }

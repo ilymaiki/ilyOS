@@ -1,0 +1,60 @@
+title: Browser Installation
+
+actions:
+
+  # Google Chrome
+  - !writeStatus: {status: 'Installing Chrome', option: 'browser-chrome'}
+
+  - !download:
+    option: 'browser-chrome'
+    url: 'https://dl.google.com/dl/chrome/install/googlechromestandaloneenterprise64.msi'
+    destination: 'googlechromestandaloneenterprise64.msi'
+    package: 'googlechrome'
+    weight: 100
+
+  - !run:
+    option: 'browser-chrome'
+    exeDir: true
+    exe: 'msiexec.exe'
+    args: '/i googlechromestandaloneenterprise64.msi /qn /norestart'
+    wait: true
+    weight: 200
+
+    # Brave Browser
+  - !writeStatus: {status: 'Installing Brave', option: 'browser-brave'}
+  
+  - !download:
+    option: 'browser-brave'
+    url: 'https://github.com/brave/brave-browser/releases/latest/download/BraveBrowserStandaloneSetup.exe'
+    destination: 'BraveBrowserStandaloneSetup.exe'
+    package: 'brave'
+    weight: 100
+
+  - !run:
+    option: 'browser-brave'
+    exeDir: true
+    exe: 'BraveBrowserStandaloneSetup.exe'
+    args: '/silent /install'
+    wait: true
+    weight: 200
+
+    # Chromium Browser
+  - !writeStatus: {status: 'Installing Chromium', option: 'browser-ugc'}
+
+  - !download:
+    option: 'browser-ugc'
+    url: 'https://github.com/macchrome/winchrome/releases/download/v156.8078.84-M156.0.8078.84-r1706539-Win64/ungoogled-chromium-156.0.8078.84-1_Win64.7z'
+    destination: 'ugc.7z'
+    package: 'ugc'
+    weight: 300
+
+  - !powerShell:
+    status: 'Installing Chromium'
+    option: 'browser-ugc'
+    command: '.\browser\installChromium.ps1'
+    exeDir: true
+    wait: true
+    runas: currentUserElevated
+    timeout: 480000
+    weight: 100
+    

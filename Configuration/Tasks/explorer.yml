@@ -1,8 +1,6 @@
 title: File Explorer
 
 actions:
-
-  # Open Explorer at This PC - Abrir el Explorador en Este equipo
   - !registryValue: {
       path: 'HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced',
       value: 'LaunchTo',
@@ -10,29 +8,23 @@ actions:
       data: '1'
   }
 
-  # Enable compact mode - Activar el modo compacto
   - !registryValue: {
       path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced',
       value: 'UseCompactMode',
       type: REG_DWORD, data: '1'
   }
 
-  # Show the details pane and adjust its size - Mostrar el panel de detalles y ajustar su tamaño
   - !powerShell:
     command: |
       reg add 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Modules\GlobalSettings\DetailsContainer' /v DetailsContainer /t REG_BINARY /d 0200000001000000 /f
       reg add 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Modules\GlobalSettings\Sizer' /v DetailsContainerSizer /t REG_BINARY /d 150100000100000000000000c0030000 /f
     wait: true
 
-  # Restore the Windows 10 classic context menu - Restaurar el menu clasico de Windows 10
-  # /ve creates the empty default value that disables the Windows 11 menu -
-  # /ve crea el valor por defecto vacio que desactiva el menu de Windows 11
   - !powerShell:
     command: |
       reg add 'HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32' /f /ve
     wait: true
     runas: currentUser
 
-  # Restart Windows Explorer - Reiniciar el Explorador de Windows
   - !taskKill: { name: 'explorer' }
   - !run: { exe: 'explorer.exe', runas: 'currentUser', wait: false }

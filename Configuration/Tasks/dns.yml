@@ -1,0 +1,9 @@
+title: DNS Configuration
+
+# DNS: Quad9 public servers (filters malicious domains) | https://www.quad9.net/
+
+actions:
+  - !powerShell:
+    command: |
+      Get-NetAdapter | Where-Object Status -eq 'Up' | Set-DnsClientServerAddress -ServerAddresses '9.9.9.9','149.112.112.112','2620:fe::fe','2620:fe::9'
+    wait: true
