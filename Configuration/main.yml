@@ -1,23 +1,26 @@
 title: Main
 
 actions:
-- !writeStatus: {status: 'Modificando el registro'}
+- !writeStatus: {status: 'Removing bloatware apps'}
+- !task: {path: 'Tasks/apps.yml'}
+
+- !writeStatus: {status: 'Modifying the registry'}
 - !task: {path: 'Tasks/registry.yml'}
 
-- !writeStatus: {status: 'Configurando el DNS'}
+- !writeStatus: {status: 'Configuring DNS'}
 - !task: {path: 'Tasks/dns.yml'}
 
-- !writeStatus: {status: 'Aplicando el fondo de pantalla'}
+- !writeStatus: {status: 'Applying wallpaper'}
 - !task: {path: 'Tasks/wallpaper.yml'}
 
-- !writeStatus: {status: 'Configurando la personalización'}
+- !writeStatus: {status: 'Configuring personalization'}
 - !task: {path: 'Tasks/personalization.yml'}
 
-- !writeStatus: {status: 'Configurando las animaciones'}
+- !writeStatus: {status: 'Configuring animations'}
 - !task: {path: 'Tasks/animations.yml'}
 
-- !writeStatus: {status: 'Instalando el navegador'}
+- !writeStatus: {status: 'Installing browser'}
 - !task: {path: 'Tasks/browsers.yml'}
 
-- !writeStatus: {status: 'Configurando el Explorador de Archivos'}
+- !writeStatus: {status: 'Configuring File Explorer'}
 - !task: {path: 'Tasks/explorer.yml'}

@@ -1,0 +1,68 @@
+title: App Removal
+privilege: TrustedInstaller
+
+actions:
+  - !writeStatus: {status: 'Removing bloatware apps'}
+
+  - !powerShell:
+    status: 'Stopping AppX deployment service'
+    command: |
+      Stop-Process -Name MSTeams -Force -ErrorAction SilentlyContinue
+      $svc = Get-CimInstance Win32_Service | Where-Object Name -eq AppXSvc
+      if ($svc.ProcessId -gt 0) { Stop-Process -Id $svc.ProcessId -Force -ErrorAction SilentlyContinue }
+
+  - !appx: {name: '*Microsoft.GamingApp*', type: family}
+  - !appx: {name: '*Microsoft.Xbox.TCUI*', type: family}
+  - !appx: {name: '*Microsoft.XboxGamingOverlay*', type: family}
+  - !appx: {name: '*Microsoft.XboxIdentityProvider*', type: family}
+  - !appx: {name: '*Microsoft.XboxSpeechToTextOverlay*', type: family}
+  - !appx: {name: '*Microsoft.Edge.GameAssist*', type: family}
+  - !appx: {name: '*Microsoft.BingNews*', type: family}
+  - !appx: {name: '*Microsoft.BingSearch*', type: family}
+  - !appx: {name: '*Microsoft.BingWeather*', type: family}
+  - !appx: {name: '*MSTeams*', type: family}
+  - !appx: {name: '*Microsoft.OutlookForWindows*', type: family}
+  - !appx: {name: '*Microsoft.YourPhone*', type: family}
+  - !appx: {name: '*MicrosoftWindows.CrossDevice*', type: family}
+  - !appx: {name: '*Microsoft.MicrosoftStickyNotes*', type: family}
+  - !appx: {name: '*Microsoft.Todos*', type: family}
+  - !appx: {name: '*Microsoft.WindowsAlarms*', type: family}
+  - !appx: {name: '*Microsoft.WidgetsPlatformRuntime*', type: family}
+  - !appx: {name: '*MicrosoftWindows.Client.WebExperience*', type: family}
+  - !appx: {name: '*Clipchamp.Clipchamp*', type: family}
+  - !appx: {name: '*Microsoft.ZuneMusic*', type: family}
+  - !appx: {name: '*Microsoft.WindowsSoundRecorder*', type: family}
+  - !appx: {name: '*Microsoft.MicrosoftSolitaireCollection*', type: family}
+  - !appx: {name: '*Microsoft.GetHelp*', type: family}
+  - !appx: {name: '*MicrosoftCorporationII.QuickAssist*', type: family}
+  - !appx: {name: '*Microsoft.WindowsFeedbackHub*', type: family}
+  - !appx: {name: '*Microsoft.Windows.DevHome*', type: family}
+  - !appx: {name: '*Microsoft.Paint*', type: family}
+  - !appx: {name: '*Microsoft.PowerAutomateDesktop*', type: family}
+  - !appx: {name: '*Microsoft.StartExperiencesApp*', type: family}
+
+  - !powerShell:
+    status: 'Removing optional capabilities'
+    command: |
+      $capabilities = @(
+        'App.StepsRecorder~~~~0.0.1.0'
+        'MathRecognizer~~~~0.0.1.0'
+        'OneCoreUAP.OneSync~~~~0.0.1.0'
+      )
+      foreach ($capability in $capabilities) {
+        if ((Get-WindowsCapability -Online -Name $capability -ErrorAction SilentlyContinue).State -eq 'Installed') {
+          Remove-WindowsCapability -Online -Name $capability
+        }
+      }
+
+  - !powerShell:
+    status: 'Removing OneDrive'
+    command: |
+      Stop-Process -Name 'OneDrive' -Force -ErrorAction SilentlyContinue
+      foreach ($setup in @("$env:WINDIR\System32\OneDriveSetup.exe", "$env:WINDIR\SysWOW64\OneDriveSetup.exe")) {
+        if (Test-Path $setup) { Start-Process -FilePath $setup -ArgumentList '/uninstallall' -Wait }
+      }
+
+  - !appx: {name: '*Client.CBS*', operation: clearCache}
+  - !appx: {name: '*StartMenuExperienceHost*', operation: clearCache}
+  - !appx: {name: '*Windows.Search*', operation: clearCache}

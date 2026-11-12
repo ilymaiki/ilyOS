@@ -31,6 +31,36 @@ actions:
   }
 
   - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\DWM',
+      value: 'AccentColor',
+      type: REG_DWORD, data: '4278248959'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent',
+      value: 'AccentColor',
+      type: REG_DWORD, data: '4278248959'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent',
+      value: 'MenuAccentColor',
+      type: REG_DWORD, data: '4278248959'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent',
+      value: 'StartColor',
+      type: REG_DWORD, data: '4278248959'
+  }
+
+  - !registryValue: {
+      path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Accent',
+      value: 'AccentPalette',
+      type: REG_BINARY, data: 'fff6a600fff28000ffed4d00ffe50000bfac00008c7e00004f470000f7b30c00'
+  }
+
+  - !registryValue: {
       path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced',
       value: 'Start_AccountNotifications',
       type: REG_DWORD, data: '0'

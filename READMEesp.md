@@ -1,6 +1,8 @@
-> 🌐 Este README también está disponible en inglés: [README.md](README.md).
-
 ![ilyOS Banner](Media/ReadmeAssets/topBanner.png)
+
+---
+
+> 🌐 Este README también está disponible en inglés: [README.md](README.md).
 
 ---
 
@@ -21,7 +23,7 @@ Este proyecto no busca ser competencia de nadie ni ser el mejor playbook del mer
 ## 🔧 Requisitos
 
 - Versión más reciente de **Windows 11**. Se recomienda que el sistema esté completamente formateado para la instalación.
-- **Compatibilidad**: este sistema operativo se puede usar tanto en la **24H2**, como en la **25H2** y la **26H2**.
+- **Compatibilidad**: este sistema operativo se puede usar tanto en la **24H2**, como en la **25H2** y la **26H2**. La versión predilecta es la **26H2**, ya que es la que se usa para las pruebas y la que mejor funciona con ilyOS.
 - **Playbook oficial de ilyOS**. Por favor, nunca descargues una versión fuera de mis enlaces de descarga.
 - [AME Wizard](https://ameliorated.io), la aplicación que ejecuta el playbook.
 
