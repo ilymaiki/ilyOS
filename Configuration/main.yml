@@ -2,7 +2,7 @@ title: Main
 
 actions:
 - !writeStatus: {status: 'Removing bloatware apps'}
-- !task: {path: 'Tasks/apps.yml'}
+- !task: {path: 'Tasks/appx.yml'}
 
 - !writeStatus: {status: 'Modifying the registry'}
 - !task: {path: 'Tasks/registry.yml'}

@@ -4,13 +4,6 @@ privilege: TrustedInstaller
 actions:
   - !writeStatus: {status: 'Removing bloatware apps'}
 
-  - !powerShell:
-    status: 'Stopping AppX deployment service'
-    command: |
-      Stop-Process -Name MSTeams -Force -ErrorAction SilentlyContinue
-      $svc = Get-CimInstance Win32_Service | Where-Object Name -eq AppXSvc
-      if ($svc.ProcessId -gt 0) { Stop-Process -Id $svc.ProcessId -Force -ErrorAction SilentlyContinue }
-
   - !appx: {name: '*Microsoft.GamingApp*', type: family}
   - !appx: {name: '*Microsoft.Xbox.TCUI*', type: family}
   - !appx: {name: '*Microsoft.XboxGamingOverlay*', type: family}
@@ -20,7 +13,14 @@ actions:
   - !appx: {name: '*Microsoft.BingNews*', type: family}
   - !appx: {name: '*Microsoft.BingSearch*', type: family}
   - !appx: {name: '*Microsoft.BingWeather*', type: family}
-  - !appx: {name: '*MSTeams*', type: family}
+
+  - !powerShell:
+    status: 'Removing Microsoft Teams'
+    command: '.\apps\removeTeams.ps1'
+    exeDir: true
+    wait: true
+    timeout: 300000
+    
   - !appx: {name: '*Microsoft.OutlookForWindows*', type: family}
   - !appx: {name: '*Microsoft.YourPhone*', type: family}
   - !appx: {name: '*MicrosoftWindows.CrossDevice*', type: family}
@@ -37,7 +37,6 @@ actions:
   - !appx: {name: '*MicrosoftCorporationII.QuickAssist*', type: family}
   - !appx: {name: '*Microsoft.WindowsFeedbackHub*', type: family}
   - !appx: {name: '*Microsoft.Windows.DevHome*', type: family}
-  - !appx: {name: '*Microsoft.Paint*', type: family}
   - !appx: {name: '*Microsoft.PowerAutomateDesktop*', type: family}
   - !appx: {name: '*Microsoft.StartExperiencesApp*', type: family}
 
@@ -57,11 +56,10 @@ actions:
 
   - !powerShell:
     status: 'Removing OneDrive'
-    command: |
-      Stop-Process -Name 'OneDrive' -Force -ErrorAction SilentlyContinue
-      foreach ($setup in @("$env:WINDIR\System32\OneDriveSetup.exe", "$env:WINDIR\SysWOW64\OneDriveSetup.exe")) {
-        if (Test-Path $setup) { Start-Process -FilePath $setup -ArgumentList '/uninstallall' -Wait }
-      }
+    command: '.\apps\removeOneDrive.ps1'
+    exeDir: true
+    wait: true
+    timeout: 180000
 
   - !appx: {name: '*Client.CBS*', operation: clearCache}
   - !appx: {name: '*StartMenuExperienceHost*', operation: clearCache}
