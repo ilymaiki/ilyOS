@@ -29,7 +29,7 @@ Este proyecto no busca ser competencia de nadie ni ser el mejor playbook del mer
 
 ## ⬇️ Instalación
 
-1. Descarga la *release* más reciente del playbook (`ilyOSvX.X.X.apbx`).
+1. Descarga la *release* más reciente del playbook (`ilyOSX.X.apbx`).
 2. Descarga y abre [AME Wizard](https://ameliorated.io).
 3. Arrastra el playbook a la ventana, ejecuta, sigue las instrucciones de instalación y listo.
 
