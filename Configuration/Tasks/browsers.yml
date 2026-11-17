@@ -1,7 +1,6 @@
 title: Browser Installation
 
 actions:
-
   # Google Chrome
   - !writeStatus: {status: 'Installing Chrome', option: 'browser-chrome'}
 

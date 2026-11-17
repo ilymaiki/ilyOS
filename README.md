@@ -1,6 +1,8 @@
-> 🌐 This README is also available in Spanish: [READMEesp.md](READMEesp.md).
-
 ![ilyOS Banner](Media/ReadmeAssets/topBanner.png)
+
+---
+
+> 🌐 This README is also available in Spanish: [READMEesp.md](READMEesp.md).
 
 ---
 
@@ -21,13 +23,13 @@ This project does not seek to be anyone's competition or to be the best playbook
 ## 🔧 Requirements
 
 - Most recent version of **Windows 11**. It is recommended that the system be completely formatted for the installation.
-- **Compatibility**: this operating system can be used on **24H2**, as well as on **25H2** and **26H2**.
+- **Compatibility**: this operating system can be used on **24H2**, as well as on **25H2** and **26H2**. The preferred version is **26H2**, as it is the one used for testing and the one that works best with ilyOS.
 - **Official ilyOS playbook**. Please, never download a version outside of my download links.
 - [AME Wizard](https://ameliorated.io), the application that runs the playbook.
 
 ## ⬇️ Installation
 
-1. Download the latest *release* of the playbook (`ilyOSvX.X.X.apbx`).
+1. Download the latest *release* of the playbook (`ilyOSX.X.X.apbx`).
 2. Download and open [AME Wizard](https://ameliorated.io).
 3. Drag the playbook into the window, run it, follow the installation instructions and done.
 

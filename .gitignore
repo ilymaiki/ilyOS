@@ -1,18 +1,16 @@
-*.iml
-*.apbx
 *.zip
 *.exe
+*.iml
 *.log
+*.apbx
 
-Thumbs.db
-Desktop.ini
-AME*.exe
 .DS_Store
+Thumbs.db
 AGENTS.md
+Desktop.ini
 
-docs/
-test/
-.vscode/
+Docs/
+Test/
 .opencode/
 
 !Executables/Browser/7zr.exe
