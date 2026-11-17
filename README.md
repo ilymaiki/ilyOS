@@ -29,7 +29,7 @@ This project does not seek to be anyone's competition or to be the best playbook
 
 ## ⬇️ Installation
 
-1. Download the latest *release* of the playbook (`ilyOSX.X.X.apbx`).
+1. Download the latest *release* of the playbook (`ilyOSX.X.apbx`).
 2. Download and open [AME Wizard](https://ameliorated.io).
 3. Drag the playbook into the window, run it, follow the installation instructions and done.
 
