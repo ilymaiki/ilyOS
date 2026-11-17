@@ -4,8 +4,8 @@ actions:
   - !powerShell:
     command: |
       New-Item -ItemType Directory -Force -Path 'C:\Windows\Web\Wallpaper\ilyOS' | Out-Null
-      Copy-Item '.\applyWallpaper\ilyOsBlack.jpg' 'C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg' -Force
-      Copy-Item '.\applyWallpaper\ilyOsWhite.jpg' 'C:\Windows\Web\Wallpaper\ilyOS\ilyOsWhite.jpg' -Force
+      Copy-Item '.\applyWallpaper\ilyOSBlack.jpg' 'C:\Windows\Web\Wallpaper\ilyOS\ilyOSBlack.jpg' -Force
+      Copy-Item '.\applyWallpaper\ilyOSWhite.jpg' 'C:\Windows\Web\Wallpaper\ilyOS\ilyOSWhite.jpg' -Force
       Copy-Item '.\applyWallpaper\applyWallpaper.ps1' 'C:\Windows\Web\Wallpaper\ilyOS\applyWallpaper.ps1' -Force
     exeDir: true
     wait: true
@@ -32,7 +32,7 @@ actions:
       path: 'HKCU\Control Panel\Desktop',
       value: 'Wallpaper',
       type: REG_SZ,
-      data: 'C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg'
+      data: 'C:\Windows\Web\Wallpaper\ilyOS\ilyOSBlack.jpg'
   }
   - !registryValue: {
       path: 'HKCU\Control Panel\Desktop',
@@ -49,17 +49,17 @@ actions:
   - !registryValue: {
       path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers',
       value: 'CurrentWallpaperPath',
-      type: REG_SZ, data: 'C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg'
+      type: REG_SZ, data: 'C:\Windows\Web\Wallpaper\ilyOS\ilyOSBlack.jpg'
   }
   - !registryValue: {
       path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers',
       value: 'BackgroundHistoryPath0',
-      type: REG_SZ, data: 'C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg'
+      type: REG_SZ, data: 'C:\Windows\Web\Wallpaper\ilyOS\ilyOSBlack.jpg'
   }
   - !registryValue: {
       path: 'HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Wallpapers',
       value: 'BackgroundHistoryPath1',
-      type: REG_SZ, data: 'C:\Windows\Web\Wallpaper\ilyOS\ilyOsWhite.jpg'
+      type: REG_SZ, data: 'C:\Windows\Web\Wallpaper\ilyOS\ilyOSWhite.jpg'
   }
 
   - !registryValue: {
@@ -69,7 +69,7 @@ actions:
   }
 
   - !powerShell:
-    command: '.\applyWallpaper\applyWallpaper.ps1 -ImagePath ''C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg'''
+    command: '.\applyWallpaper\applyWallpaper.ps1 -ImagePath ''C:\Windows\Web\Wallpaper\ilyOS\ilyOSBlack.jpg'''
     exeDir: true
     wait: true
     runas: currentUserElevated
@@ -79,5 +79,5 @@ actions:
       value: 'ilyOSWallpaperStartup',
       type: REG_SZ,
       oobe: only,
-      data: 'cmd /c "powershell -NoP -ExecutionPolicy Bypass -File C:\Windows\Web\Wallpaper\ilyOS\applyWallpaper.ps1 -ImagePath C:\Windows\Web\Wallpaper\ilyOS\ilyOsBlack.jpg"'
+      data: 'cmd /c "powershell -NoP -ExecutionPolicy Bypass -File C:\Windows\Web\Wallpaper\ilyOS\applyWallpaper.ps1 -ImagePath C:\Windows\Web\Wallpaper\ilyOS\ilyOSBlack.jpg"'
   }
